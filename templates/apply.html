@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Pengajuan Simulasi — DanaKita{% endblock %}
+{% block content %}<section class="auth-wrap apply-wrap"><div class="auth-card apply-card"><a class="back-link" href="{{ url_for('dashboard') }}">← Kembali ke dashboard</a><span class="eyebrow">FORMULIR SIMULASI</span><h1>Ajukan simulasi dana</h1><p>Isi data simulasi berikut. Tidak ada pencairan atau kewajiban pembayaran.</p>
+<form method="post" class="form-stack" id="loanForm"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<label>Nominal simulasi (Rp)<input type="number" name="amount" id="loanAmount" min="500000" max="50000000" step="500000" value="8000000" required></label>
+<label>Tenor<select name="tenor" id="loanTenor"><option value="3">3 bulan</option><option value="6">6 bulan</option><option value="9">9 bulan</option><option value="12" selected>12 bulan</option><option value="18">18 bulan</option><option value="24">24 bulan</option></select></label>
+<label>Tujuan simulasi<textarea name="purpose" rows="3" minlength="5" maxlength="250" required placeholder="Contoh: simulasi kebutuhan pendidikan"></textarea></label>
+<div class="estimate estimate-light"><span>Estimasi cicilan per bulan</span><b id="formMonthly">Rp 746.667</b></div>
+<button class="button button-full" type="submit">Simpan pengajuan demo →</button></form><div class="mini-notice">Asumsi ilustrasi bunga flat 1% per bulan. Angka bukan penawaran produk pinjaman.</div></div></section>{% endblock %}

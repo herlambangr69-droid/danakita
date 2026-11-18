@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block title %}{{ 'Buat Akun' if mode == 'register' else 'Masuk' }} — DanaKita{% endblock %}
+{% block content %}<section class="auth-wrap"><div class="auth-card"><a class="back-link" href="{{ url_for('index') }}">← Kembali ke beranda</a><span class="eyebrow">DANAKITA DEMO</span><h1>{{ 'Buat akun baru' if mode == 'register' else 'Selamat datang kembali' }}</h1><p>{{ 'Daftar untuk mencoba fitur simulasi DanaKita.' if mode == 'register' else 'Masuk ke akun demo kamu.' }}</p>
+<form method="post" class="form-stack"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+{% if mode == 'register' %}<label>Nama lengkap<input name="name" required minlength="2" maxlength="100" autocomplete="name" placeholder="Nama kamu"></label>{% endif %}
+<label>Email<input type="email" name="email" required maxlength="150" autocomplete="email" placeholder="nama@email.com"></label>
+<label>Password<input type="password" name="password" required minlength="10" autocomplete="{{ 'new-password' if mode == 'register' else 'current-password' }}" placeholder="Minimal 10 karakter"></label>
+<button class="button button-full" type="submit">{{ 'Buat akun' if mode == 'register' else 'Masuk' }} →</button></form>
+<p class="auth-switch">{% if mode == 'register' %}Sudah punya akun? <a href="{{ url_for('login') }}">Masuk</a>{% else %}Belum punya akun? <a href="{{ url_for('register') }}">Daftar</a>{% endif %}</p>
+<div class="mini-notice">Gunakan data fiktif untuk demo. Jangan gunakan password yang sama dengan akun pribadi.</div></div></section>{% endblock %}
