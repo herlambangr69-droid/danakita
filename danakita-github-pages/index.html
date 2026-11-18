@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DanaKita - simulasi pinjaman digital untuk edukasi.">
+  <title>DanaKita — Simulasi Pinjaman Digital</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" data-page="home"><span class="brand-mark">↗</span> Dana<span>Kita</span></a>
+  <nav>
+    <a href="#fitur" data-scroll="fitur">Fitur</a>
+    <a href="#simulasi" data-scroll="simulasi">Simulasi</a>
+    <button class="nav-button" id="navLogin">Masuk</button>
+    <button class="button button-small" id="navRegister">Daftar</button>
+    <button class="nav-button hidden" id="navDashboard">Dashboard</button>
+    <button class="nav-button hidden" id="navLogout">Keluar</button>
+  </nav>
+</header>
+
+<div id="notice" class="notice hidden" role="status"></div>
+
+<main id="homePage">
+  <section class="hero container">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span> DEMO FINTECH PLATFORM</span>
+      <h1>Rencanakan kebutuhan.<br><em>Kelola dengan bijak.</em></h1>
+      <p>Kenali simulasi pinjaman digital dengan pengalaman yang sederhana, transparan, dan mudah dipahami.</p>
+      <div class="hero-actions"><button class="button" id="heroRegister">Mulai simulasi <span>↗</span></button><a class="text-link" href="#cara-kerja">Pelajari cara kerja →</a></div>
+      <div class="trust-row"><span>✓ Simulasi transparan</span><span>✓ Dashboard demo</span></div>
+    </div>
+    <div class="hero-visual"><div class="visual-glow"></div><div class="finance-card">
+      <div class="card-top"><span>● DanaKita</span><span class="card-chip">DEMO</span></div>
+      <p class="muted-light">Contoh nilai pinjaman</p><h2>Rp 8.000.000</h2><div class="card-line"></div>
+      <div class="card-bottom"><span>Tenor<br><b>12 bulan</b></span><span>Estimasi / bulan<br><b>Rp 746.667</b></span></div>
+    </div><div class="float-note"><span class="float-icon">✓</span><span><b>Simulasi mudah</b><small>Hitung estimasi cicilan</small></span></div></div>
+  </section>
+
+  <section class="stats container"><div><b>01</b><span>Simulasi dana</span></div><div><b>02</b><span>Pengajuan demo</span></div><div><b>03</b><span>Riwayat lokal</span></div><div><b>04</b><span>Belajar fintech</span></div></section>
+
+  <section class="section container" id="fitur"><div class="section-heading"><span class="eyebrow">FITUR PLATFORM</span><h2>Semua lebih mudah dipahami.</h2><p>Fitur inti untuk mendemonstrasikan alur aplikasi pinjaman digital.</p></div>
+    <div class="feature-grid">
+      <article class="feature"><div class="feature-icon">⌁</div><h3>Simulasi angsuran</h3><p>Ubah nominal dan tenor untuk melihat estimasi pembayaran per bulan.</p></article>
+      <article class="feature"><div class="feature-icon">▤</div><h3>Pengajuan demo</h3><p>Catat pengajuan simulasi dan lihat statusnya dari dashboard demo.</p></article>
+      <article class="feature"><div class="feature-icon">◈</div><h3>Akun demo</h3><p>Jelajahi alur akun pada browser yang sedang digunakan.</p></article>
+    </div>
+  </section>
+
+  <section class="sim-section" id="simulasi"><div class="container sim-layout">
+    <div><span class="eyebrow eyebrow-light">KALKULATOR SIMULASI</span><h2>Hitung estimasi<br>angsuranmu.</h2><p>Ubah nominal dan tenor. Hasil ini hanya ilustrasi dengan asumsi bunga flat 1% per bulan.</p></div>
+    <div class="sim-card"><label for="amountRange">Nominal simulasi</label><div class="amount-display" id="amountLabel">Rp 8.000.000</div>
+      <input id="amountRange" type="range" min="500000" max="50000000" step="500000" value="8000000">
+      <div class="range-labels"><span>Rp500 ribu</span><span>Rp50 juta</span></div>
+      <label for="tenorSelect">Tenor</label><select id="tenorSelect"><option value="3">3 bulan</option><option value="6">6 bulan</option><option value="9">9 bulan</option><option value="12" selected>12 bulan</option><option value="18">18 bulan</option><option value="24">24 bulan</option></select>
+      <div class="estimate"><span>Estimasi cicilan per bulan</span><b id="monthlyLabel">Rp 746.667</b></div>
+      <button class="button button-full" id="simApply">Coba ajukan simulasi →</button>
+      <small class="disclaimer">Bukan penawaran kredit, persetujuan, atau janji pencairan dana.</small>
+    </div>
+  </div></section>
+
+  <section class="section container how" id="cara-kerja"><div class="section-heading"><span class="eyebrow">CARA KERJA</span><h2>Tiga langkah sederhana.</h2></div>
+    <div class="steps"><div><b>1</b><h3>Buat akun demo</h3><p>Daftar menggunakan identitas uji coba, bukan data pribadi penting.</p></div><div><b>2</b><h3>Isi simulasi</h3><p>Pilih nominal, tenor, dan tujuan simulasi.</p></div><div><b>3</b><h3>Pantau dashboard</h3><p>Lihat catatan pengajuan demo pada browsermu.</p></div></div>
+  </section>
+  <section class="disclaimer-band"><div class="container"><b>Perhatian:</b> DanaKita adalah proyek portofolio dan simulasi edukatif. Jangan memasukkan NIK, nomor rekening, foto identitas, password asli, atau data keuangan nyata.</div></section>
+</main>
+
+<section id="authPage" class="auth-wrap hidden">
+  <div class="auth-card">
+    <a href="#" class="back-link" id="backHome">← Kembali ke beranda</a>
+    <span class="eyebrow">DANAKITA DEMO</span><h1 id="authTitle">Buat akun demo</h1>
+    <p id="authSubtitle">Daftar untuk mencoba dashboard simulasi.</p>
+    <form id="authForm" class="form-stack">
+      <label id="nameField">Nama lengkap<input id="nameInput" type="text" minlength="2" maxlength="100" autocomplete="name"></label>
+      <label>Email<input id="emailInput" type="email" required autocomplete="email" placeholder="nama@email.com"></label>
+      <label>Password<input id="passwordInput" type="password" minlength="10" required autocomplete="current-password" placeholder="Minimal 10 karakter"></label>
+      <button class="button button-full" id="authSubmit" type="submit">Daftar akun demo</button>
+    </form>
+    <p class="auth-switch"><span id="switchText">Sudah punya akun?</span> <a href="#" id="switchAuth">Masuk</a></p>
+    <div class="mini-notice">Mode GitHub Pages: akun demo disimpan hanya di penyimpanan browser perangkat ini. Jangan gunakan password yang dipakai di layanan lain.</div>
+  </div>
+</section>
+
+<section id="dashboardPage" class="dashboard container hidden">
+  <div class="dashboard-head"><div><span class="eyebrow">DASHBOARD PERSONAL</span><h1>Halo, <span id="welcomeName">Pengguna</span>!</h1><p>Berikut ringkasan simulasi pada browser ini.</p></div><button class="button" id="newApplication">+ Buat simulasi</button></div>
+  <div class="welcome-panel"><div><span class="eyebrow eyebrow-light">DANAKITA DEMO</span><h2>Kelola rencana dengan bijak.</h2><p>Seluruh angka dan pengajuan di halaman ini hanya simulasi edukatif.</p></div><div class="welcome-symbol">DK</div></div>
+  <div class="table-card"><div class="table-heading"><div><h2>Riwayat simulasi</h2><p>Catatan tersimpan di browser ini.</p></div><span class="count-pill" id="applicationCount">0 pengajuan</span></div>
+    <div class="table-scroll"><table><thead><tr><th>Tanggal</th><th>Nominal</th><th>Tenor</th><th>Estimasi / bulan</th><th>Status</th></tr></thead><tbody id="applicationRows"></tbody></table></div>
+    <div class="empty-state" id="emptyState"><div>▤</div><h3>Belum ada simulasi</h3><p>Buat simulasi pertama untuk melihat catatan di sini.</p><button class="text-link" id="emptyApply">Mulai simulasi →</button></div>
+  </div>
+</section>
+
+<section id="applyPage" class="auth-wrap apply-wrap hidden">
+  <div class="auth-card apply-card">
+    <a href="#" class="back-link" id="backDashboard">← Kembali ke dashboard</a>
+    <span class="eyebrow">PENGAJUAN SIMULASI</span><h1>Catat simulasi</h1><p>Isi detail untuk membuat catatan simulasi demo.</p>
+    <form id="applyForm" class="form-stack">
+      <label>Nominal simulasi (Rp)<input id="applyAmount" type="number" min="500000" max="50000000" step="500000" value="8000000" required></label>
+      <label>Tenor<select id="applyTenor"><option>3</option><option>6</option><option>9</option><option selected>12</option><option>18</option><option>24</option></select></label>
+      <label>Tujuan simulasi<textarea id="purposeInput" rows="3" minlength="5" maxlength="250" required placeholder="Contoh: simulasi kebutuhan pendidikan"></textarea></label>
+      <div class="estimate estimate-light"><span>Estimasi cicilan per bulan</span><b id="applyEstimate">Rp 746.667</b></div>
+      <button class="button button-full" type="submit">Simpan simulasi demo</button>
+    </form>
+    <div class="mini-notice">Pengajuan ini tidak dikirim ke lembaga keuangan dan tidak menghasilkan persetujuan atau pencairan pinjaman.</div>
+  </div>
+</section>
+
+<footer><div class="footer-inner"><a class="brand brand-light" href="#"><span class="brand-mark">↗</span> Dana<span>Kita</span></a><p>Platform simulasi pinjaman digital untuk tujuan edukasi dan portofolio.</p><small>© 2026 DanaKita Demo. Bukan layanan keuangan.</small></div></footer>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
